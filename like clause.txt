@@ -1,0 +1,58 @@
+show databases;
+
+create DATABASE purchasing;
+USE purchasing;
+
+
+
+CREATE TABLE workers (
+    
+eno INT PRIMARY KEY,
+
+ename VARCHAR(50),
+
+job VARCHAR(30),
+
+salary INT,
+
+department VARCHAR(30)
+
+);
+
+INSERT INTO workers VALUES
+(10, 'yazhini', 'Manager',120000, 'Admin'),
+(20, 'dharshini', 'Clerk',80000, 'Finance'),
+(30, 'chitra', 'Engineer',95000, 'Admin'),
+(40, 'Trisha', 'Analyst',40000, 'Finance'),
+(50, 'Divya', 'Clerk',60000, 'HR');
+
+SELECT * FROM workers;
+DESC workers;
+
+SELECT eno AS Employee_ID, ename AS Employee_Name FROM workers;
+
+DELETE FROM workers WHERE eno = 10;
+SELECT * FROM workers;
+
+CREATE OR REPLACE VIEW less_than_1L AS
+SELECT ename, 
+salary
+FROM workers
+WHERE salary <= 100000;
+
+SELECT * FROM less_than_1L;
+
+CREATE OR REPLACE VIEW admin_workers AS
+SELECT ename, 
+salary
+FROM workers
+WHERE department = 'Admin';
+
+SELECT * FROM admin_workers;
+
+DROP VIEW IF EXISTS less_than_1L;
+
+DROP VIEW IF EXISTS admin_workers;
+
+
+select * from workers where ename like 'y_zh_n_';

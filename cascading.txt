@@ -1,0 +1,56 @@
+show databases;
+
+create database office;
+
+use office;
+
+
+create table department(
+
+dno int primary key,
+
+dname varchar(40)
+
+);
+create table employees(
+  
+eno int primary key,
+
+ename varchar(40),
+
+dno int not null,
+
+foreign key(dno) references department(dno)
+
+on delete cascade
+
+on update cascade
+
+);
+
+
+insert into department values (101, 'HR');
+
+insert into department values (102, 'Admin');
+
+insert into department values (103, 'Sales');
+
+
+insert into employees values (1000, 'prashee', 101);
+
+insert into employees values (1001, 'yazh', 102);
+
+insert into employees values (1002, 'tharanica', 103);
+
+
+select * from employees;
+
+
+delete from department where dno = 103;
+
+
+select * from employees;
+
+
+select eno as 'Employee ID', ename as 'Employee Name', dno as 'Department Number' from employees;
+
