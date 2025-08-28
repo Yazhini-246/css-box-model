@@ -1,0 +1,47 @@
+show databases;
+create database service;
+USE service;
+create table worker(
+worker_id int,
+Firstname varchar(20),
+salary int,
+department varchar(40)
+);
+
+INSERT INTO worker values(100,'yazh',40000,'ECE');
+INSERT INTO worker values(101,'mitra',50000,'ECE');
+INSERT INTO worker values(102,'tharani',60000,'IT');
+INSERT INTO worker values(103,'thrisha',700000,'IT');
+INSERT INTO Worker values(104,'suriya',800000,'CIVIL');
+INSERT INTO worker values(105,'megala',300000,'CIVIL');
+select * from worker where department='ECE' order by salary asc;
+select * from worker where department='IT' order by salary desc;
+select *from worker order by salary asc;
+select* from worker order by salary desc;
+select department,max(salary) from worker group by department;
+select department,avg(salary) from worker group by department;
+select department,sum(salary) from worker group by department; 
+
+select * from worker order by salary desc limit 2 offset 3;
+
+
+select LTRIM(Firstname) AS left_trimmed_name from worker;
+select RTRIM(Firstname) from worker;
+select lower(department) from worker;
+select upper(Firstname) from worker;
+select department, max(salary) AS max_salary from worker group by  department having max(salary)>5000000;
+ select  department,avg(salary)  AS avg_salary from worker group by department having avg(salary) between 50000 and 2000000;
+ create table sathyabama
+ (id int,
+ name varchar(20));
+ insert into sathyabama values(100,'yazh'),(102,'shiv');
+ select*from sathyabama;
+ 
+ 
+ create table ugc
+ (id int,
+ name varchar(20));
+ insert into ugc values(103,'yazh'),(104,'shiv');
+ select*from ugc;
+ select *from ugc where id=
+ (select id from sathyabama where name='shiv');
