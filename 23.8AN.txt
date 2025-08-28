@@ -1,0 +1,20 @@
+show databases;
+create database flipkart;
+use flipkart;
+create table category(
+cid int primary key,
+cname varchar(30) not null
+);
+insert into category values(100,'electronics');
+insert into category values(101,'furnitures');
+select *from category;
+desc flipkart;
+create table products(
+pid int primary key,
+pname  varchar(20) not null,
+cid int,
+foreign key(cid) references category(cid)
+);
+insert into products values(1,'smart watch',100);
+insert into products values(2,' mobile phones',101);
+select *from products;
