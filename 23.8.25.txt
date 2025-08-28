@@ -1,0 +1,23 @@
+show databases;
+create database company;
+use company;
+
+CREATE TABLE persons(
+ ID int NOT NULL,
+ Firstname varchar(25) NOT NULL,
+ Lastname varchar(35) NOT NULL,
+ Age int,
+ );
+ select * from persons;
+ ALTER TABLE persons MODIFY age int NOT NULL;
+ ALTER TABLE persons
+ ADD UNIQUE (ID);
+ ALTER TABLE persons
+ ADD PRIMARY KEY(ID);
+ 
+ 
+ ALTER TABLE persons
+ ADD CHECK(Age>=18 and age<=100);
+ desc persons;
+ INSERT INTO persons values(1,'yazhini','K',19);
+    
