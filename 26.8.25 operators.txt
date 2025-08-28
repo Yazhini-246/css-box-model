@@ -1,0 +1,25 @@
+SELECT SUM(Salary) AS salary FROM worker;
+
+select*from  worker where WORKER_ID IN (1,2,3) AND salary >100000;
+select*from worker where WORKER_ID NOT IN(1,2,3) OR salary<400000;
+select*from worker where salary between 300000 and 40000;
+select*from worker where salary not between 40000 and  60000;
+
+select * from worker where salary<10000
+UNION
+select * from worker where salary>80000;
+
+select first_name AS name,salary from worker where worker_id =100
+UNION ALL
+Select last_name AS name,salary from worker where worker_id=101;
+
+select
+first_name,
+salary,
+CASE
+ WHEN salary >=30000 THEN 'high'
+ WHEN salary between 80000 and 200000 THEN 'medium'
+ ELSE 'low'
+ END AS salary_grade
+ FROM worker;
+
