@@ -1,0 +1,18 @@
+package nov25;
+
+import java.util.Arrays;
+
+public class PrintArrayExamples {
+
+    public static void main(String[] args) {
+
+        int[] intArray = { 1, 2, 3, 4, 5 };
+
+        // printing array directly (prints reference)
+        System.out.println(intArray);
+
+        // printing array properly using Arrays.toString()
+        String intArrayString = Arrays.toString(intArray);
+        System.out.println(intArrayString);
+    }
+}

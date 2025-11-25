@@ -1,0 +1,63 @@
+package nov25;
+import java.util.*;
+
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+
+
+	public class ArrayExamples {
+
+	    public static void main(String[] args) {
+
+	        System.out.println("=== 2. Create ArrayList from Array ===");
+	        String[] stringArray = { "a", "b", "c", "d", "e" };
+	        ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(stringArray));
+	        System.out.println(arrayList);
+
+
+	        System.out.println("\n=== 3. Check if Array Contains Value ===");
+	        String[] stringArray2 = { "abc", "bcd", "cba", "dcb", "efg" };
+	        boolean contains = Arrays.asList(stringArray2).contains("abc");
+	        System.out.println(contains);
+
+
+	        System.out.println("\n=== 4. Concatenate Two Arrays ===");
+	        int[] intArray = { 1, 2, 3, 4, 5 };
+	        int[] intArray2 = { 6, 7, 8, 9, 10 };
+	        int[] concat = ArrayUtils.addAll(intArray, intArray2);
+	        System.out.println(Arrays.toString(concat));
+
+
+	        System.out.println("\n=== 6. Join Array Elements into String ===");
+	        String joined = StringUtils.join(new String[] { "a", "b", "c" }, ", ");
+	        System.out.println(joined);
+
+
+	        System.out.println("\n=== 7. Convert ArrayList to Array ===");
+	        ArrayList<String> arrList2 = new ArrayList<>(Arrays.asList(stringArray));
+	        String[] arrToString = new String[arrList2.size()];
+	        arrList2.toArray(arrToString);
+	        for (String s : arrToString)
+	            System.out.println(s);
+
+
+	        System.out.println("\n=== 8. Convert Array to Set ===");
+	        String[] s1 = { "a", "b", "c", "d", "e", "a" };
+	        Set<String> set123 = new HashSet<>(Arrays.asList(s1));
+	        System.out.println(set123);
+
+
+	        System.out.println("\n=== 9. Reverse an Array ===");
+	        int[] reverseArray = { 1, 2, 3, 4, 5 };
+	        ArrayUtils.reverse(reverseArray);
+	        System.out.println(Arrays.toString(reverseArray));
+
+
+	        System.out.println("\n=== 10. Remove Element from Array ===");
+	        int[] removeTest = { 1, 2, 3, 4, 5 };
+	        int[] removed = ArrayUtils.removeElement(removeTest, 3);
+	        System.out.println(Arrays.toString(removed));
+	    }
+	}
+
+}
