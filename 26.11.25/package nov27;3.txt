@@ -1,0 +1,128 @@
+package nov27;
+import java.util.*;
+
+public class RemovigElements {
+
+    public static void main(String[] args) {
+
+                System.out.println("\n===== LINKEDLIST ADDING OPERATIONS =====");
+
+        LinkedList<String> ll = new LinkedList<>();
+        System.out.println("Initial List: " + ll);
+
+        ll.add("Ravi");
+        ll.add("Vijay");
+        ll.add("Ajay");
+        System.out.println("After add(E element): " + ll);
+        
+        System.out.println("---------------------------------------");
+
+        ll.add(1, "Gaurav");
+        System.out.println("After add(index, element): " + ll);
+        
+        System.out.println("---------------------------------------");
+
+      
+        LinkedList<String> ll2 = new LinkedList<>();
+        ll2.add("Sonoo");
+        ll2.add("Hanumat");
+        ll.addAll(ll2);
+        System.out.println("After addAll(Collection): " + ll);
+
+        System.out.println("---------------------------------------");
+
+        
+        LinkedList<String> ll3 = new LinkedList<>();
+        ll3.add("John");
+        ll3.add("Rahul");
+        ll.addAll(1, ll3);
+        System.out.println("After addAll(index, Collection): " + ll);
+        
+        System.out.println("---------------------------------------");
+
+
+        ll.addFirst("Lokesh");
+        System.out.println("After addFirst(): " + ll);
+        
+        System.out.println("---------------------------------------");
+
+
+        ll.addLast("Harsh");
+        System.out.println("After addLast(): " + ll);
+        
+        System.out.println("---------------------------------------");
+
+
+
+        System.out.println("\n===== LINKEDLIST REMOVAL OPERATIONS =====");
+
+        LinkedList<String> removeList = new LinkedList<>();
+        removeList.add("Ravi");
+        removeList.add("Vijay");
+        removeList.add("Ajay");
+        removeList.add("Anuj");
+        removeList.add("Gaurav");
+        removeList.add("Harsh");
+        removeList.add("Virat");
+        removeList.add("Gaurav");
+        removeList.add("Harsh");
+        removeList.add("Amit");
+
+        System.out.println("Initial List: " + removeList);
+        
+        System.out.println("---------------------------------------");
+
+
+        removeList.remove("Vijay");
+        System.out.println("After remove(object): " + removeList);
+
+        System.out.println("---------------------------------------");
+
+        removeList.remove(0);
+        System.out.println("After remove(index): " + removeList);
+
+        System.out.println("---------------------------------------");
+
+        LinkedList<String> tempList = new LinkedList<>();
+        tempList.add("Ravi");
+        tempList.add("Hanumat");
+        removeList.addAll(tempList);
+        System.out.println("After addAll(new list): " + removeList);
+        
+        System.out.println("---------------------------------------");
+
+
+        removeList.removeAll(tempList);
+        System.out.println("After removeAll(new list): " + removeList);
+        
+        System.out.println("---------------------------------------");
+
+
+        removeList.removeFirst();
+        System.out.println("After removeFirst(): " + removeList);
+        
+        System.out.println("---------------------------------------");
+
+
+        removeList.removeLast();
+        System.out.println("After removeLast(): " + removeList);
+
+        System.out.println("---------------------------------------");
+
+        removeList.removeFirstOccurrence("Gaurav");
+        System.out.println("After removeFirstOccurrence(): " + removeList);
+        
+        System.out.println("---------------------------------------");
+
+
+        removeList.removeLastOccurrence("Harsh");
+        System.out.println("After removeLastOccurrence(): " + removeList);
+        
+        System.out.println("---------------------------------------");
+
+
+        removeList.clear();
+        System.out.println("After clear(): " + removeList);
+        
+    }
+}
